@@ -1,22 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import Checked from './checked';
+// import Count from './Count';
 import './index.css';
-const student=[
-  {id:1,name:"Muhammad"},
-  {id:2,name:"Muhammad"},
-  {id:3,name:"Muhammad"},
-  {id:4,name:"Muhammad"},
-  {id:5,name:"Muhammad"},
-  {id:6,name:"Muhammad"},
-]
+import Name from './Name';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {student.map((v)=>{
-      return <App data={v}/>
-    })}
-    
+    {/* <Count/> */}
+    {/* <Name/> */}
+    <Checked/>
   </React.StrictMode>
 );
 
