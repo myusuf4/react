@@ -1,6 +1,6 @@
 import React from "react";
 import students from './mock.js'
-class Crud extends React.Component{
+class Read extends React.Component{
   constructor(prop){
     super(prop);
     this.state={
@@ -9,7 +9,8 @@ class Crud extends React.Component{
   }
   render(){
     const onFilter=(e)=>{
-     let res = students.filter((v)=>v.name.includes(e.target.value))
+    const {value}=e.target
+     let res = students.filter((v)=>v.name.toLowerCase().includes(value.toLowerCase()))
      this.setState({data:res})
     }
     return(
@@ -26,4 +27,4 @@ class Crud extends React.Component{
   }
 }
 
-export default Crud
+export default Read
