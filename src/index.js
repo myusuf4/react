@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Edit from './Edit';
 import './index.css';
-import App from './App';
+// import Search from './Search';
+// import Add from './Add';
+// import Read from './Read';
+// import Checked from './checked';
+// import Count from './Count';
+// import Name from './Name';
+// import Person from './person';
+// import Delete from './Delete';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <Count/> */}
+    {/* <Name/> */}
+    {/* <Checked/> */}
+    {/* <Person/> */}
+    {/* <Read/> */}
+    {/* <Delete/> */}
+    {/* <Add/> */}
+    {/* <Search/> */}
+    <Edit/>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
