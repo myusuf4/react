@@ -1,35 +1,40 @@
-import React from "react";
-import { Container,Button, ActiveButton, Rotate } from "./style";
-import { ThemeProvider,createGlobalStyle } from "styled-components";
+import React  from "react";
 
-const GlobalStyle=createGlobalStyle`
-body{
-  background:${(props)=>props.theme.bg};
-  color:${(props)=>props.theme.cl};
-}
-`
+const students=[
+  {id:1,name:"Muhammad",status:"junior"},
+  {id:2,name:"AbduJalil",status:"senior"},
+  {id:3,name:"Abdukarim",status:"middle"},
+  {id:4,name:"Abdussomad",status:"middle"},
+  {id:5,name:"Abdurrohman",status:"intern"},
+  {id:6,name:"Abdulloh",status:"senior"},
+];
+
+
 
 class Home extends React.Component{
-  state={
-    light:false,
-  };
+  constructor(prop){
+    super(prop);
+    this.state={
+      list:students
+    };
+  }
   render(){
-    const theme={
-      bg:this.state.light?"white":"black",
-      cl:this.state.light?'black':"white",
+
+    const onDelete=(id)=>{
+      let res=this.state.list.filter((v)=>v.id !== id)
+      this.setState({list:res})
     }
+
     return(
-      <ThemeProvider theme={theme}>
-        <GlobalStyle/> 
-        <h1>theme provider</h1>
-        <Button>CLick me!</Button>
-        <ActiveButton>Active</ActiveButton>
-        <Rotate>Rotate</Rotate>
-        <br />
-        <br />
-        <button onClick={()=>this.setState({light:!this.state.light})}>Change</button>
-      </ThemeProvider>
+      <div>
+        {this.state.list.map(({id,name,status},index)=>{
+          return <h1 key={id}>
+           {id} {name} {status} 
+            <button onClick={()=>onDelete(id)}>delete</button>
+          </h1>
+        })}
+      </div>
     )
   }
 }
-export default Home
+export default Home;
