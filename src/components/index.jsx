@@ -1,40 +1,54 @@
 import React  from "react";
 
-const students=[
-  {id:1,name:"Muhammad",status:"junior"},
-  {id:2,name:"AbduJalil",status:"senior"},
-  {id:3,name:"Abdukarim",status:"middle"},
-  {id:4,name:"Abdussomad",status:"middle"},
-  {id:5,name:"Abdurrohman",status:"intern"},
-  {id:6,name:"Abdulloh",status:"senior"},
-];
-
-
-
 class Home extends React.Component{
   constructor(prop){
     super(prop);
     this.state={
-      list:students
-    };
+      count:0,
+    }
+    // console.log("constructer");
+  }
+
+  // componentWillMount(){
+  //   console.log("will");
+  // }
+  // componentDidMount(){
+  //   console.log('did');
+  // }
+  // componentWillReceiveProps(){
+  //   console.log("keldi");
+  // }
+  // shouldComponentUpdate(){
+  //   console.log("should");
+  //   return true||false;
+  // }
+
+  // componentWillUpdate(){
+  //   console.log("will");
+  // }
+
+  // componentDidUpdate(){
+  //   console.log("didup");
+  // }
+
+  // componentWillUnmount(){
+  //   console.log("unmount");
+  // }
+
+
+  plus(){
+    this.setState({count:this.state.count+1})
   }
   render(){
-
-    const onDelete=(id)=>{
-      let res=this.state.list.filter((v)=>v.id !== id)
-      this.setState({list:res})
-    }
-
     return(
       <div>
-        {this.state.list.map(({id,name,status},index)=>{
-          return <h1 key={id}>
-           {id} {name} {status} 
-            <button onClick={()=>onDelete(id)}>delete</button>
-          </h1>
-        })}
+        <h1>React Lifecycles</h1>
+        <h1>{this.state.count}</h1>
+        <button onClick={()=>this.plus()}>CLick</button>
       </div>
     )
   }
+
 }
-export default Home;
+
+export default Home
