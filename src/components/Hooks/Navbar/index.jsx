@@ -1,10 +1,6 @@
 import { Container } from "./style";
-import React,{useContext} from "react";
-import { StudentsContext } from "../../context";
 
-const Navbar=()=>{
-  const [student]=useContext(StudentsContext);
-
+const Navbar=({student})=>{
   return(
     <Container >
       <h1>Students{student.length}</h1>

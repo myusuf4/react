@@ -1,14 +1,6 @@
 import { Container } from "./style"
-import React,{useContext} from "react";
-import { StudentsContext } from "../../context";
 
-const Body=()=>{
-  const [student,setStudent]=useContext(StudentsContext);
-  const onDelete=(id)=>{
-    const res=student.filter((v)=>v.id!==id);
-    setStudent(res)
-  }
-
+const Body=({student,onDelete=Function.prototype})=>{
   return(
     <Container>
       <h1>Students:{student.length}</h1>
