@@ -1,9 +1,9 @@
 import { Container } from "./style"
-import React,{useContext} from "react";
-import { StudentsContext } from "../../context";
+import React from "react";
+import { Student } from "../../context/student";
 
 const Body=()=>{
-  const [student,setStudent]=useContext(StudentsContext);
+  const [student,setStudent]=Student();
 
   const onDelete = (id) => { 
     const res=student.filter((v)=>v.id !== id);

@@ -1,9 +1,9 @@
 import { Container } from "./style";
-import React,{useContext} from "react";
-import { StudentsContext } from "../../context";
+import React from "react";
+import {Student } from "../../context/student";
 
 const Navbar=()=>{
-  const [student]=useContext(StudentsContext);
+  const [student]=Student();
 
   return(
     <Container >
