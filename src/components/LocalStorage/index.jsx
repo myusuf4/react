@@ -10,7 +10,7 @@ const LocalStorage=()=>{
   const minus=()=>{
     localStorage.setItem("count",count-1);
 
-    setCount(count-1)
+    setCount(count-1);
   };
 
   console.log();
