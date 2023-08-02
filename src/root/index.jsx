@@ -1,12 +1,10 @@
-import Control from "../components/UseRef/Controlled";
-import UnControl from "../components/UseRef/Uncontrolled";
+import Fetch from "../Fetch";
 import Container from "./style";
 
 const Root=()=>{
   return (
     <Container>
-      <Control/>
-      <UnControl/>
+      <Fetch/>
     </Container>
     )
 }
